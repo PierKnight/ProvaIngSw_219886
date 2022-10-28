@@ -11,17 +11,20 @@ public class FunnyAlgorithmsTest {
 
     private FunnyAlgorithms funnyAlgorithms;
 
+    private static int numberTest = 0;
 
     @Before
-    public void init()
+    public void startTest()
     {
-        FunnyAlgorithms.printMessageWithDate("started FunnyAlgorithmsTest");
+        FunnyAlgorithms.printMessageWithDate("started FunnyAlgorithmsTest N." + numberTest);
     }
 
     @After
-    public void endTests()
+    public void endTest()
     {
-        FunnyAlgorithms.printMessageWithDate("ended FunnyAlgorithmsTest");
+        FunnyAlgorithms.printMessageWithDate("ended FunnyAlgorithmsTest N." + numberTest);
+        numberTest++;
+
     }
 
     @Before
