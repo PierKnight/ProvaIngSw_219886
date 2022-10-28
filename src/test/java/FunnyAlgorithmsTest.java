@@ -151,6 +151,7 @@ public class FunnyAlgorithmsTest {
     {
         assertEquals(4554, funnyAlgorithms.stringToIntConverter("4554"));
         assertEquals(-5656, funnyAlgorithms.stringToIntConverter("-5656"));
+        assertEquals(32767, funnyAlgorithms.stringToIntConverter("32767"));
     }
 
 
