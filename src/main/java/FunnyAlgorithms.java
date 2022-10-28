@@ -1,5 +1,8 @@
+import org.joda.time.DateTime;
+
 import java.io.InvalidObjectException;
 import java.security.InvalidParameterException;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,6 +39,11 @@ public class FunnyAlgorithms {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static void printMessageWithDate(String msg)
+    {
+        System.out.println(new DateTime() + ": " + msg);
     }
 
     /**
