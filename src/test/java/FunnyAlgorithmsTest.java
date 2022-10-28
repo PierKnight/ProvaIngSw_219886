@@ -114,12 +114,17 @@ public class FunnyAlgorithmsTest {
     {
         int[] arrayToSortAscending = new int[]{5,21,2,3,7,3,1,8,4,3,7};
         int[] arrayToSortDescending = new int[]{5,21,2,3,7,3,1,8,4,3,7};
+        int[] smallArray = new int[]{5,21};
 
         this.funnyAlgorithms.selectionSort(arrayToSortAscending,0);
         assertTrue(isArraySorted(arrayToSortAscending, 0));
 
         this.funnyAlgorithms.selectionSort(arrayToSortDescending,1);
         assertTrue(isArraySorted(arrayToSortDescending, 1));
+
+        //checkSmallArray
+        this.funnyAlgorithms.selectionSort(smallArray,1);
+        assertTrue(isArraySorted(smallArray, 1));
 
     }
 
