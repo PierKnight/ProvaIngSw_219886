@@ -54,6 +54,9 @@ public class FunnyAlgorithms {
      */
     public void selectionSort(int[] array, int order) {
 
+        if(array == null)
+            throw new IllegalArgumentException("l'Array non può essere null");
+
         if (order != 0 && order != 1) {
             throw new IllegalArgumentException("L'ordine può essere 0 o 1.");
         }
