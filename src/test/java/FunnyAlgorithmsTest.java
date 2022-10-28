@@ -98,7 +98,7 @@ public class FunnyAlgorithmsTest {
 
         for(int i = 1;i < array.length;i++)
         {
-            if(order == 1 ? array[i] < last : array[i] > last)
+            if(order == 0 ? array[i] < last : array[i] > last)
                 return false;
             last = array[i];
         }
