@@ -1,12 +1,14 @@
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
-import java.io.InvalidObjectException;
 import java.security.InvalidParameterException;
-import java.util.Date;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FunnyAlgorithms {
+
+
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss");
 
     /**
      * Binary Search è un algoritmo di ricerca per trovare la posizione di un
@@ -41,9 +43,10 @@ public class FunnyAlgorithms {
         arr[j] = temp;
     }
 
+
     public static void printMessageWithDate(String msg)
     {
-        System.out.println(new DateTime() + ": " + msg);
+        System.out.println(dateTimeFormatter.print(DateTime.now()) + ": " + msg);
     }
 
     /**
