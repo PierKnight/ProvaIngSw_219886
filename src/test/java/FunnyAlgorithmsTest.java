@@ -13,13 +13,13 @@ public class FunnyAlgorithmsTest {
 
 
     @Before
-    public static void init()
+    public void init()
     {
         FunnyAlgorithms.printMessageWithDate("started FunnyAlgorithmsTest");
     }
 
     @After
-    public static void endTests()
+    public void endTests()
     {
         FunnyAlgorithms.printMessageWithDate("ended FunnyAlgorithmsTest");
     }
