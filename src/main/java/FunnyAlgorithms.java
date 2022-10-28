@@ -1,3 +1,8 @@
+import java.io.InvalidObjectException;
+import java.security.InvalidParameterException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class FunnyAlgorithms {
 
     /**
@@ -57,6 +62,9 @@ public class FunnyAlgorithms {
         }
     }
 
+    //REGEX PER INDIVIDUARE SOLAMENTE NUMERI
+    private static final Pattern NUMBER_PATTERN = Pattern.compile("-?[0-9]+");
+
     /**
      * Il metodo deve accettare una stringa e convertirla in un numero intero
      * Le stringhe ben formate non contengono caratteri diversi da numeri, spazi finali e meno
@@ -67,8 +75,13 @@ public class FunnyAlgorithms {
      * @return
      * @throws UnsupportedOperationException
      */
-    public int stringToIntConverter(String number) throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("To be implemented");
+    public int stringToIntConverter(String number) throws NumberFormatException {
+
+        int intNumber = Integer.parseInt(number);
+
+        if(intNumber < -32768 || intNumber > 32767)
+            throw new InvalidParameterException("NUMBER IS NOT IN [-32768, 32767]");
+        return intNumber;
     }
 
 }
