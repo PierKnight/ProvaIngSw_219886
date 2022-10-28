@@ -2,6 +2,7 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.junit.*;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -121,6 +122,37 @@ public class FunnyAlgorithmsTest {
         assertTrue(isArraySorted(arrayToSortDescending, 1));
 
     }
+
+    @Test(expected = NumberFormatException.class)
+    public void shouldThrowNumberFormatExceptionLetter()
+    {
+        funnyAlgorithms.stringToIntConverter("FSDGS");
+    }
+    @Test(expected = NumberFormatException.class)
+    public void shouldThrowNumberFormatExceptionFloat()
+    {
+        funnyAlgorithms.stringToIntConverter("5.0");
+    }
+
+    @Test(expected = InvalidParameterException.class)
+    public void checkIntervalPositive()
+    {
+        funnyAlgorithms.stringToIntConverter("67453456");
+    }
+
+    @Test(expected = InvalidParameterException.class)
+    public void checkIntervalNegative()
+    {
+        funnyAlgorithms.stringToIntConverter("-53454554");
+    }
+
+    @Test
+    public void checkIfReturnsCorrectNumber()
+    {
+        assertEquals(4554, funnyAlgorithms.stringToIntConverter("4554"));
+        assertEquals(-5656, funnyAlgorithms.stringToIntConverter("-5656"));
+    }
+
 
 
 
